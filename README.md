@@ -1,5 +1,5 @@
 # AI_report
-## Structure
+# Structure
 ```bash
 ├── .gitignore
 ├── README.md
@@ -16,7 +16,7 @@
     ├── run.py
     ├── run_ver2.py
 ```
-## 
+#
 🔹 lib-bot.py
 Chứa code của bot Connect4 sử dụng thư viện PySpiel của DeepMind.
 
@@ -27,7 +27,7 @@ Triển khai thuật toán Minimax kết hợp với Alpha-Beta Pruning để t�
 
 Có thể dùng như phương án dự phòng hoặc để so sánh hiệu suất với MCTS.
 
-# Connect4-MCTS/
+## Connect4-MCTS/
 🔸 mcts.py
 Chứa logic triển khai thuật toán Monte Carlo Tree Search thuần (không dùng thư viện ngoài).
 
@@ -49,14 +49,14 @@ Nhận input từ server (thông tin trạng thái game), xử lý đầu vào, 
 🔸 requirements.txt
 Danh sách các thư viện cần thiết cho phần MCTS nội bộ.
 
-## Implementation
+# Implementation
 
-# Setup
+## Setup
 ```bash
 pip install -r requirements.txt
 ```
 
-# Local test
+## Local test
 ```bash
 cd Connect4-MCTS
 python run.py
@@ -64,13 +64,13 @@ python run.py
 python run_ver2.py
 ```
 
-# Deploy server
+## Deploy server
 ```bash
 cd Connect4-MCTS
 python app.py
 ```
 
-# Backup and library bot
+## Backup and library bot
 ```bash
 python lib-bot.py
 # hoặc
