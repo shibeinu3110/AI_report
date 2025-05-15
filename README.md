@@ -3,51 +3,49 @@
 ```bash
 ├── .gitignore
 ├── README.md
-├── backup.py
-├── lib-bot.py
-├── requirements.txt
-└── Connect4-MCTS/
-    ├── __pycache__/
+├── backup.py                           # Minimax + Alpha-Beta Pruning bot (dự phòng/so sánh)
+├── lib-bot.py                          # Bot Connect4 dùng thư viện PySpiel của DeepMind với MCTS
+├── requirements.txt                    # Thư viện cần thiết cho toàn bộ dự án
+└── Connect4-MCTS/                      # Thư mục chính chứa code MCTS thuần và ứng dụng server
+    ├── pycache/
     ├── README.md
-    ├── app.py
-    ├── connect4.py
-    ├── mcts.py
-    ├── requirements.txt
-    ├── run.py
-    ├── run_ver2.py
+    ├── app.py                          # Triển khai bot trên server
+    ├── connect4.py                     # Logic game Connect4: bảng, trạng thái, kiểm tra hợp lệ
+    ├── mcts.py                         # Thuật toán Monte Carlo Tree Search thuần
+    ├── requirements.txt                # Thư viện cần thiết cho phần MCTS nội bộ
+    ├── run.py                          # Chạy thử bot local, debug chiến thuật
+    ├── run_ver2.py                     # Phiên bản chạy thử khác
 ```
-#
-🔹 lib-bot.py
-Chứa code của bot Connect4 sử dụng thư viện PySpiel của DeepMind.
 
-Áp dụng thuật toán MCTS được hỗ trợ bởi PySpiel để đưa ra nước đi tối ưu.
+## Mô tả chi tiết
 
-🔹 backup.py
-Triển khai thuật toán Minimax kết hợp với Alpha-Beta Pruning để tăng hiệu suất.
+### lib-bot.py
+- Triển khai bot Connect4 sử dụng thư viện [PySpiel](https://github.com/deepmind/open_spiel) của DeepMind.
+- Sử dụng thuật toán MCTS có sẵn trong PySpiel để chọn nước đi tối ưu.
 
-Có thể dùng như phương án dự phòng hoặc để so sánh hiệu suất với MCTS.
+### backup.py
+- Triển khai thuật toán Minimax kết hợp Alpha-Beta Pruning để cải thiện hiệu suất tìm kiếm.
+- Có thể dùng làm giải pháp dự phòng hoặc để so sánh với MCTS.
 
-## Connect4-MCTS/
-🔸 mcts.py
-Chứa logic triển khai thuật toán Monte Carlo Tree Search thuần (không dùng thư viện ngoài).
+### Connect4-MCTS/mcts.py
+- Cài đặt thuật toán Monte Carlo Tree Search thuần không phụ thuộc thư viện ngoài.
+- Bao gồm đầy đủ 4 bước: selection, expansion, simulation, backpropagation.
 
-Bao gồm các bước: selection, expansion, simulation và backpropagation.
+### Connect4-MCTS/connect4.py
+- Xử lý logic game Connect4:
+  - Khởi tạo bảng game.
+  - Kiểm tra trạng thái thắng/thua/hòa.
+  - Kiểm tra tính hợp lệ của nước đi.
 
-🔸 connect4.py
-Quản lý logic game Connect4: khởi tạo bảng, kiểm tra trạng thái thắng/thua/hòa, và hợp lệ của nước đi.
+### Connect4-MCTS/run.py & run_ver2.py
+- Chạy thử bot local.
+- Hỗ trợ debug, thử nghiệm và tinh chỉnh chiến thuật.
 
-🔸 run.py & run_ver2.py
-Dùng để chơi thử local và test bot.
+### Connect4-MCTS/app.py
+- Triển khai bot trên server.
+- Nhận trạng thái game từ server, xử lý và trả về nước đi tốt nhất dựa trên MCTS.
 
-Hữu ích để debug và điều chỉnh chiến thuật trước khi đưa lên server.
-
-🔸 app.py
-Dùng để triển khai bot trên server.
-
-Nhận input từ server (thông tin trạng thái game), xử lý đầu vào, và đưa ra nước đi tối ưu dựa trên thuật toán MCTS.
-
-🔸 requirements.txt
-Danh sách các thư viện cần thiết cho phần MCTS nội bộ.
+---
 
 # Implementation
 
