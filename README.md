@@ -1,5 +1,5 @@
-# AI_report
-# Structure
+# Báo cáo Connect 4 AI
+## Structure
 ```bash
 ├── .gitignore
 ├── README.md
@@ -47,14 +47,14 @@
 
 ---
 
-# Implementation
+## Implementation
 
-## Setup
+### Setup
 ```bash
 pip install -r requirements.txt
 ```
 
-## Local test
+### Local test
 ```bash
 cd Connect4-MCTS
 python run.py
@@ -62,13 +62,13 @@ python run.py
 python run_ver2.py
 ```
 
-## Deploy server
+### Deploy server
 ```bash
 cd Connect4-MCTS
 python app.py
 ```
 
-## Backup and library bot
+### Backup and library bot
 ```bash
 python lib-bot.py
 # hoặc
